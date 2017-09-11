@@ -140,7 +140,10 @@ echo "customizing prefs.js…"
 sed -i '' -f sed_command-file.txt ./build/"$foldername"/assets/prefs.js
 
 
-#icons
+# TODO updater.ini
+
+# TODO icons
+
 # mac/edirom-online
 mkdir ./build/"$foldername"/mac
 #touch ./build/"$foldername"/mac/edirom-online
