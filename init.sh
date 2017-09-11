@@ -119,7 +119,26 @@ echo "vendorShortName=$vendor" >> ./build/"$foldername"/assets/branding/locale/b
 #chrome.manifest
 ## no changes
 
-# updater.ini
+# assets/prefs.js
+echo
+echo "copy prefs.js"
+cp ./submodules/webapp-xul-wrapper/assets/prefs.js ./build/"$foldername"/assets
+
+#write sed commands
+echo
+echo "Writing sed_command-file.txt"
+echo "" > sed_command-file.txt
+echo "s/Zotero/Edirom Online/g" >> sed_command-file.txt
+echo 's/pref("toolkit.defaultChromeURI", "chrome:\/\/app\/content\/ui\/main.xul");/pref("toolkit.defaultChromeURI", "chrome:\/\/edirom-online\/content\/ui\/main.xul");/g' >> sed_command-file.txt
+echo 's/pref("browser.chromeURL", "chrome:\/\/app\/content\/ui\/basicViewer.xul");/\/\/pref("browser.chromeURL", "chrome:\/\/app\/content\/ui\/basicViewer.xul");/g' >> sed_command-file.txt
+# TODO app.update.urls
+echo 's/pref("network.protocol-handler.warn-external.http", false);/\/\/pref("network.protocol-handler.warn-external.http", false);/g' >> sed_command-file.txt
+echo 's/pref("network.protocol-handler.warn-external.https", false);/\/\/pref("network.protocol-handler.warn-external.https", false);/g' >> sed_command-file.txt
+echo 's/pref("network.protocol-handler.warn-external.ftp", false);/\/\/pref("network.protocol-handler.warn-external.ftp", false);/g' >> sed_command-file.txt
+
+echo "customizing prefs.js…"
+sed -i '' -f sed_command-file.txt ./build/"$foldername"/assets/prefs.js
+
 
 #icons
 
