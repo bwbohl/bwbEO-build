@@ -141,6 +141,16 @@ sed -i '' -f sed_command-file.txt ./build/"$foldername"/assets/prefs.js
 
 
 #icons
+# mac/edirom-online
+mkdir ./build/"$foldername"/mac
+#touch ./build/"$foldername"/mac/edirom-online
+
+echo "#!/bin/bash" > ./build/"$foldername"/mac/edirom-online
+echo 'CALLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"' >> ./build/"$foldername"/mac/edirom-online
+echo '"$CALLDIR/edirom-online-bin" "$CALLDIR/../Resources/application.ini" "$@"' >> ./build/"$foldername"/mac/edirom-online
+
+chmod +x ./build/"$foldername"/mac/edirom-online
+
 
 #config.sh
 echo "copying config.sh…"
