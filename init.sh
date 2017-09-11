@@ -35,7 +35,7 @@ echo "id: $id"
 echo
 read -p "Short name ($name): " shortname
 shortname=${shortname:-$name}
-echo $name
+echo $shortname
 
 echo
 read -p "Version (1.0.0): " version
