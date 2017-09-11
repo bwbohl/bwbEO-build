@@ -28,6 +28,9 @@ echo
 read -p "Application name (bwbEO): " name
 name=${name:-bwbEO}
 echo $name
+id=$(sed -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ /abcdefghijklmnopqrstuvwxyz-/' <<< $name)
+echo
+echo "id: $id"
 
 echo
 read -p "Short name ($name): " shortname
