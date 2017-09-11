@@ -87,7 +87,7 @@ echo "Name=$name" >> ./build/"$foldername"/assets/application.ini
 echo "Version={{VERSION}}" >> ./build/"$foldername"/assets/application.ini
 echo "BuildID={{BUILDID}}" >> ./build/"$foldername"/assets/application.ini
 echo "Copyright=Copyright (c) $(date +%Y) $vendor" >> ./build/"$foldername"/assets/application.ini
-echo "ID=" >> ./build/"$foldername"/assets/application.ini
+echo "ID=$id" >> ./build/"$foldername"/assets/application.ini
 echo >> ./build/"$foldername"/assets/application.ini
 echo "[Gecko]" >> ./build/"$foldername"/assets/application.ini
 echo "MinVersion=5.0" >> ./build/"$foldername"/assets/application.ini #check if this is still true
