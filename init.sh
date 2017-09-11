@@ -79,7 +79,7 @@ mkdir ./build/"$foldername"/assets
 mkdir ./build/"$foldername"/assets/branding
 mkdir ./build/"$foldername"/assets/branding/locale/
 
-#application.ini
+#assets/application.ini
 touch ./build/"$foldername"/assets/application.ini
 echo "[App]" >> ./build/"$foldername"/assets/application.ini
 echo "Vendor=$vendor" >> ./build/"$foldername"/assets/application.ini
@@ -98,8 +98,7 @@ echo "EnableExtensionManager=0" >> ./build/"$foldername"/assets/application.ini
 echo "EnableProfileMigrator=0" >> ./build/"$foldername"/assets/application.ini
 
 
-#brand.dtd
-#rm ./build/assets/branding/locale/brand.dtd
+#assets/branding/locale/brand.dtd
 touch ./build/"$foldername"/assets/branding/locale/brand.dtd
 
 echo '<!ENTITY  brandFullName        "'$name'">' >> ./build/"$foldername"/assets/branding/locale/brand.dtd
@@ -110,8 +109,7 @@ echo '<!ENTITY  vendorUrl            "'$www'">' >> ./build/"$foldername"/assets/
 echo '<!ENTITY  softwareName         "Edirom Online">' >> ./build/"$foldername"/assets/branding/locale/brand.dtd
 echo '<!ENTITY  logoCopyright        "'$logo'">' >> ./build/"$foldername"/assets/branding/locale/brand.dtd
 
-#brand.properties
-#rm ./build/assets/branding/locale/brand.properties
+#assets/branding/locale/brand.properties
 touch ./build/"$foldername"/assets/branding/locale/brand.properties
 
 echo "brandFullName=$name" >> ./build/"$foldername"/assets/branding/locale/brand.properties
@@ -129,7 +127,7 @@ echo "vendorShortName=$vendor" >> ./build/"$foldername"/assets/branding/locale/b
 echo "copying config.sh…"
 cp ./submodules/webapp-xul-wrapper/config.sh ./build/"$foldername"/config.sh
 
-#write se commands
+#write sed commands
 echo
 echo "Writing sed_command-file.txt"
 echo "" > sed_command-file.txt
@@ -148,6 +146,7 @@ sed -i '' -f sed_command-file.txt build/"$foldername"/config.sh
 echo
 echo "done."
 
-echo "copying assets to  webapp-xul-wrapper"
+#copy files to webapp-xul-wrapper submodule
+echo "copying files to  webapp-xul-wrapper"
 echo
 cp -R -v ./build/"$foldername"/* ./submodules/webapp-xul-wrapper
