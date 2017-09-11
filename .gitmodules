@@ -5,3 +5,19 @@
         path = submodules/exist
         url = https://github.com/eXist-db/exist
         branch = master
+[submodule "Edirom-Online"]
+	path = submodules/Edirom-Online
+	url = https://github.com/Edirom/Edirom-Online
+	branch = develop
+[submodule "EditionExample"]
+	path = submodules/EditionExample
+	url = https://github.com/Edirom/EditionExample
+	branch = develop
+[submodule "SourceManager"]
+	path = submodules/SourceManager
+	url = https://github.com/Edirom/SourceManager
+	branch = develop
+[submodule "sourceImageCartographer"]
+	path = submodules/sourceImageCartographer
+	url = https://github.com/Edirom/sourceImageCartographer
+	branch = develop
