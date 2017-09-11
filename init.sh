@@ -184,6 +184,8 @@ echo "customizing config.sh…"
 # TODO BRIDGESCRIPTS
 sed -i '' -f sed_command-file.txt build/"$foldername"/config.sh
 
+read -n 1 -s -p "Press any key to continue…"
+
 echo
 echo "done."
 
