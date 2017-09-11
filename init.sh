@@ -154,8 +154,17 @@ echo '"$CALLDIR/edirom-online-bin" "$CALLDIR/../Resources/application.ini" "$@"'
 
 chmod +x ./build/"$foldername"/mac/edirom-online
 
+#mac/contents
+mkdir ./build/"$foldername"/mac/Contents
+##PkgInfo
+echo "APPLedon" > ./build/"$foldername"/mac/Contents/PkgInfo
+##Info.plist
+## TODO InfoString
+## TODO BundleIdentifier
+## TODO BundleSignature
 
 #config.sh
+echo
 echo "copying config.sh…"
 cp ./submodules/webapp-xul-wrapper/config.sh ./build/"$foldername"/config.sh
 
