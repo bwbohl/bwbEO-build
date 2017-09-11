@@ -174,9 +174,9 @@ echo "Writing sed_command-file.txt"
 echo "" > sed_command-file.txt
 echo "s/SIGN=1/SIGN=0/g" >> sed_command-file.txt
 echo "s/MODULE=\"app\"/MODULE=\"edirom-online\"/g" >> sed_command-file.txt
-echo "s/WEBAPPMODULE=\"kitchensink\/dist\/\"/WEBAPPMODULE=\"edirom-online\/dist\/\"/g"  >> sed_command-file.txt
+echo "s/WEBAPPMODULE=\"kitchensink\/dist\/\"/WEBAPPMODULE=\"jetty\/\"/g"  >> sed_command-file.txt
 echo "s/APPNAME=\"Webapp XUL Wrapper\"/APPNAME=\"$name\"/g"  >> sed_command-file.txt
-echo "s/PACKAGENAME=\"webapp-xul-wrapper\"/PACKAGENAME=\"$(sed -e 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ /abcdefghijklmnopqrstuvwxyz-/' <<< $name)\"/g"  >> sed_command-file.txt
+echo "s/PACKAGENAME=\"webapp-xul-wrapper\"/PACKAGENAME=\"$id\"/g"  >> sed_command-file.txt
 echo "s/DEFAULT_VERSION_PREFIX=\"0.0.0.SOURCE.\"/DEFAULT_VERSION_PREFIX=\"$version.SOURCE.\"/g" >> sed_command-file.txt
 echo "s/VERSION_NUMERIC=\"0.0.0\"/VERSION_NUMERIC=\"$version\"/g" >> sed_command-file.txt
 
