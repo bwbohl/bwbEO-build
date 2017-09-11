@@ -186,10 +186,44 @@ sed -i '' -f sed_command-file.txt build/"$foldername"/config.sh
 
 read -n 1 -s -p "Press any key to continue…"
 
+#build.sh
 echo
-echo "done."
+echo "copying build.sh…"
+cp ./submodules/webapp-xul-wrapper/build.sh ./build/"$foldername"/build.sh
+
+#write sed commands
+echo
+echo "Writing sed_command-file.txt"
+echo "" > sed_command-file.txt
+#zip chrome into jar
+echo "s/zip -0 -r -q ..\/\$MODULE.jar ./mkdir \"\$BUILDDIR\/\$MODULE\/\$MODULE\"/g" >> sed_command-file.txt
+# some faulty asterisk  in following command?
+echo "s/rm -rf \"\$BUILDDIR\/\$MODULE\/chrome\/\"\*/mv \"\$BUILDDIR\/\$MODULE\/chrome\/\"* \"\$BUILDDIR\/\$MODULE\/\$MODULE\/\"/g" >> sed_command-file.txt
+echo "s/mv ..\/\$MODULE.jar ./mv \"\$BUILDDIR\/\$MODULE\/\$MODULE\" \"\$BUILDDIR\/\$MODULE\/chrome\/\$MODULE\/\"/g" >> sed_command-file.txt
+# Copy updater.ini
+echo "s/perl -pi -e 's\/chrome\\\\\\/\/jar:chrome\\\\\\/\'\$MODULE\'.jar\\\\!\\\\\/\/g' \"\$BUILDDIR\/\$MODULE\/chrome.manifest\"/perl -pi -e 's\/chrome\\\\\\/\/chrome\\\\\\/\'\$MODULE\'\\\\\/\/g' \"\$BUILDDIR\/\$MODULE\/chrome.manifest\"/g" >> sed_command-file.txt
+#Copy web app
+echo "s/cp -r \"\$CALLDIR\/modules\/\$WEBAPPMODULE\/\" \"\$BUILDDIR\/\$MODULE\/chrome\/webapp\/\"/cp -r \"\$CALLDIR\/modules\/\$WEBAPPMODULE\" \"\$BUILDDIR\/\$MODULE\/chrome\/\$WEBAPPMODULE\"/g" >> sed_command-file.txt
+# Add Mac-specific Standalone assets
+# TODO some faulty asterisk
+echo "s/zip -0 -r -q \"\$CONTENTSDIR\/Resources\/chrome\/\$MODULE.jar\" \*/cp -R * \"\$CONTENTSDIR\/Resources\/chrome\/\$MODULE\/\"/g" >> sed_command-file.txt
+# Add (Windows|Unix)-specific Standalone assets
+# TODO some faulty asterisk
+echo "s/zip -0 -r -q \"\$APPDIR\/chrome\/\$MODULE.jar\" \*/cp -R * \"\$APPDIR\/chrome\/\$MODULE\/\"/g" >> sed_command-file.txt
+# TODO OPERA if [ $PACKAGE == 0 ] ?
+
+echo "customizing build.sh…"
+# TODO BRIDGESCRIPTS
+sed -i '' -f sed_command-file.txt build/"$foldername"/build.sh
+
+read -n 1 -s -p "Press any key to continue…"
 
 #copy files to webapp-xul-wrapper submodule
 echo "copying files to  webapp-xul-wrapper"
 echo
 cp -R -v ./build/"$foldername"/* ./submodules/webapp-xul-wrapper
+
+rm ./submodules/webapp-xul-wrapper/mac/app
+
+echo
+echo "done."
