@@ -1,23 +1,23 @@
 [submodule "webapp-xul-wrapper"]
-	path = submodules/webapp-xul-wrapper
-	url = https://github.com/bwbohl/webapp-xul-wrapper
+  path = submodules/webapp-xul-wrapper
+  url = https://github.com/bwbohl/webapp-xul-wrapper
 [submodule "exist"]
-        path = submodules/exist
-        url = https://github.com/eXist-db/exist
-        branch = master
+  path = submodules/exist
+  url = https://github.com/eXist-db/exist
+  branch = master
 [submodule "Edirom-Online"]
-	path = submodules/Edirom-Online
-	url = https://github.com/Edirom/Edirom-Online
-	branch = develop
+  path = submodules/Edirom-Online
+  url = https://github.com/Edirom/Edirom-Online
+  branch = develop
 [submodule "EditionExample"]
-	path = submodules/EditionExample
-	url = https://github.com/Edirom/EditionExample
-	branch = develop
+  path = submodules/EditionExample
+  url = https://github.com/Edirom/EditionExample
+  branch = develop
 [submodule "SourceManager"]
-	path = submodules/SourceManager
-	url = https://github.com/Edirom/SourceManager
-	branch = develop
+  path = submodules/SourceManager
+  url = https://github.com/Edirom/SourceManager
+  branch = develop
 [submodule "sourceImageCartographer"]
-	path = submodules/sourceImageCartographer
-	url = https://github.com/Edirom/sourceImageCartographer
-	branch = develop
+  path = submodules/sourceImageCartographer
+  url = https://github.com/Edirom/sourceImageCartographer
+  branch = develop
