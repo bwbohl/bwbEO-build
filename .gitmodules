@@ -21,3 +21,7 @@
   path = submodules/sourceImageCartographer
   url = https://github.com/Edirom/sourceImageCartographer
   branch = develop
+[submodule "webapp-xul-wrapper-edirom-online-module"]
+  path = submodules/webapp-xul-wrapper-edirom-online-module
+  url = https://github.com/OPERA-Editions/webapp-xul-wrapper-edirom-online-module
+  branch= develop

@@ -15,7 +15,8 @@ echo
 echo "updating git submodule…"
 echo $(git submodule update)
 
-cp -R ../../../../OPERA/webapp-xul-wrapper-edirom-online-module/* ./modules
+# edirom online module for webapp-xul-wrapper
+cp -R ../webapp-xul-wrapper-edirom-online-module/edirom-online/ ./modules/edirom-online/
 #echo
 #echo "building"
 #bash build.sh
